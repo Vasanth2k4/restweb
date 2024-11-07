@@ -1,5 +1,5 @@
 # Ex.07 Restaurant Website
-## Date:7-11-2024
+## Date:07-11-2024
 
 ## AIM:
 To develop a static Restaurant website to display the food items and services provided by them.
@@ -28,212 +28,182 @@ Validate the HTML code.
 Publish the website in the given URL.
 
 ## PROGRAM:
-## index.html:
+index.html
 ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Lemon</title>
-    <link rel="stylesheet" href="rest.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <!-- Updated to show only the image -->
-            <img src="logo.jpeg" alt="Little Lemon Logo">
+            <img src="Asset 16@4x.png" alt="Logo">
         </div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Book</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">Book</a>
+            <a href="#">About</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Promo Section -->
+    <section class="promo">
+        <h2>30% Off This Weekend</h2>
+        <p class="promo-line">Weekly Taste & Happy Bites</p>
+    </section>
+
+    <!-- Main Content Section -->
     <main>
-        <!-- Promotional Banner -->
-        <section class="promo-banner">
-            <h2>30% Off This Weekend</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris.</p>
-        </section>
-
-        <!-- Content Columns -->
-        <section class="content-columns">
-            <article class="column">
+        <div class="content-box">
+            <div class="card">
                 <h3>Our New Menu</h3>
-                <img src="bbq.jpeg" alt="New Menu">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris.</p>
+                <img src="images.jpg" alt="New Menu">
+                <p>Honey Sriracha Chicken Skewers</p>
                 <a href="#">See our new menu</a>
-            </article>
-
-            <article class="column">
-                <h3>Book a Table</h3>
-                <img src="pasta.jpeg" alt="Book a Table">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris.</p>
+            </div>
+            <div class="card">
+                <h3>Book a table</h3>
+                <img src="salmon-nicoise-salad-FT-RECIPE0221-984254ccb3734468836570330b4ff897.jpg" alt="Book a Table">
+                <p>Kids Eat Free</p>
                 <a href="#">Book your table now</a>
-            </article>
-
-            <article class="column">
+            </div>
+            <div class="card">
                 <h3>Opening Hours</h3>
-                <img src="chef(1).jpeg" alt="Opening Hours">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et congue massa, eu fringilla mauris.</p>
+                <img src="images (2).jpg" alt="Opening Hours">
+                <p>Book your spacial time</p>
                 <p>Mon - Fri: 2pm - 10pm<br>Sat: 2pm - 11pm<br>Sun: 2pm - 9pm</p>
-            </article>
-        </section>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <div class="footer-logo">
-            <img src="small logo.jpeg" alt="Little Lemon Logo">
+            <img src="Asset 20@4x.png" alt="Little Lemon Logo">
         </div>
         <div class="footer-text">
-            <p>© 2024 Little Lemon</p>
-        </div>
+        <p>Copyright Little Lemon</p>
     </footer>
 </body>
 </html>
 ```
-## style.css:
+styles.css
 ```
-/* General Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
     color: #333;
+    background-color: #f9f9f9;
 }
-
-header, footer {
-    background-color: #fff;
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    background-color: #333; 
+    color: #fff;
 }
 
-/* Logo Section */
-.logo {
+header .logo {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the logo */
-    padding: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
-.logo img {
-    max-width: 450px; /* Adjust the logo size as needed */
-    height: auto;
-}
-
-/* Navigation Styling */
-nav {
-    background-color: #000; /* Black background */
+header nav {
     display: flex;
-    justify-content: center; /* Center the content inside the nav */
-    border-radius: 10px; /* Rounded corners */
+    gap: 15px;
+    background-color: #000; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    flex: none; /* Do not stretch menu items */
-}
-
-nav a {
-    display: block;
+header nav a {
+    color: #fff;
     text-decoration: none;
-    color: #fff; /* White text color */
-    padding: 10px 20px;
+    font-size: 20px; 
+}
+
+header nav a:hover {
+    color: #d3d3d3; 
+}
+
+.promo {
+    background: url('pizza-5179939_960_720.jpg') center/cover no-repeat;
+    padding: 50px;
+    color: #0c0b0b;
     text-align: center;
-    transition: background-color 0.3s;
+}
+.promo-line {
+    font-size: 2em; 
+    color: #fbf7f7;
+    font-weight: bold;
 }
 
-nav a:hover {
-    background-color: #333; /* Slightly darker hover effect */
-}
-
-/* Full-width Black Box Stretch */
-header {
-    width: 100%;
+.promo h2 {
+    font-size: 4em;
+    margin-bottom: 40px;
 }
 
 main {
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }
 
-/* Promotional Banner */
-.promo-banner {
-    background: url("food.jpg") center/cover no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-/* Content Columns */
-.content-columns {
+.content-box {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-.column {
-    flex: 1;
-    background-color: #ffcd7c;
+.card {
+    background-color: #f8b052;
     padding: 20px;
-    border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    border-radius: 20px;
 }
 
-.column img {
+.card img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.column h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
+.card h3 {
+    color: #333;
 }
 
-.column a {
-    display: inline-block;
-    margin-top: 10px;
+.card a {
+    color: #287929;
     text-decoration: none;
-    color: #0066cc;
-    transition: color 0.3s;
 }
 
-.column a:hover {
-    color: #004d99;
-}
 
-/* Footer */
 footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    background-color: #f2ebeb;
+    color: #191414;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
 }
 
 .footer-logo img {
-    width: 30px;
-}
-
-.footer-text {
+    width: 50px;
     display: flex;
     align-items: center;
     color: #777;
@@ -241,11 +211,8 @@ footer {
 ```
 
 ## OUTPUT:
-![Screenshot 2024-10-27 140016](https://github.com/user-attachments/assets/4fb0d19c-3ba7-4724-9c0c-4ec891ed919b)
-
-![Screenshot 2024-10-27 140026](https://github.com/user-attachments/assets/b302f576-b3fd-412c-be2d-7fa4c77644c9)
-
-![Screenshot 2024-10-27 141602](https://github.com/user-attachments/assets/89503e2d-7eb2-4086-b4bd-780fe7d87199)
+![alt text](<Screenshot (31)-1.png>)
+![alt text](<Screenshot (32)-1.png>) 
 
 ## RESULT:
 The program for designing software company website using HTML and CSS is completed successfully.
